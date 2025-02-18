@@ -64,6 +64,7 @@ def webhook():
             completions = client.chat.completions.create(
                 model=os.environ.get("OPENAI_API_MODEL") or "gpt-3.5-turbo",
                 stream=False,
+                temperature=0.2,
                 messages=messages
             )
             answer = completions.choices[0].message.content
@@ -112,6 +113,7 @@ def webhook():
             completions = client.chat.completions.create(
                 model=os.environ.get("OPENAI_API_MODEL") or "gpt-3.5-turbo",
                 stream=False,
+                temperature=0.7,
                 messages=messages
             )
             answer = completions.choices[0].message["content"].strip()
