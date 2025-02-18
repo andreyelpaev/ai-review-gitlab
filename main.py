@@ -41,7 +41,7 @@ def webhook():
 
         diffs = [change["diff"] for change in mr_changes["changes"]]
 
-        pre_prompt = "Review the following git diff code changes, focusing on structure, security, and clarity."
+        pre_prompt = "Review the following git diff code changes, focusing on structure, security, and clarity. Provide code suggestions for best practices alignment."
 
         questions = """
         Questions:
