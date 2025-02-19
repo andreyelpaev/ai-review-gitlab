@@ -116,7 +116,7 @@ def webhook():
                 temperature=0.7,
                 messages=messages
             )
-            answer = completions.choices[0].message["content"].strip()
+            answer = completions.choices[0].message.content
             answer += "\n\nFor reference, i was given the following questions: \n"
             for question in questions.split("\n"):
                 answer += f"\n{question}"
