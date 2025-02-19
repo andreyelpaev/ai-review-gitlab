@@ -57,7 +57,7 @@ def webhook():
         messages = [
             {"role": "system", "content": "You are a senior developer reviewing code changes. You always answer in Russian."},
             {"role": "user", "content": f"{pre_prompt}\n\n{''.join(diffs)}{questions}"},
-            {"role": "assistant", "content": "Include a concise version of each question in your response. You always answer in Russian."},
+            {"role": "assistant", "content": "Respond in friendly markdown for GitLab. Include a concise version of each question in your response. You always answer in Russian."},
         ]
 
         try:
@@ -105,7 +105,7 @@ def webhook():
         messages = [
             {"role": "system", "content": "You are a senior developer reviewing code changes from a commit. You always answer in Russian."},
             {"role": "user", "content": f"{pre_prompt}\n\n{changes_string}{questions}"},
-            {"role": "assistant", "content": "Include concise versions of questions in the response. You always answer in Russian."},
+            {"role": "assistant", "content": "Respond in friendly markdown for GitLab. Include concise versions of questions in the response. You always answer in Russian."},
         ]
 
         print(messages)
